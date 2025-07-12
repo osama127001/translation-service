@@ -1,9 +1,7 @@
 package com.osama.translation_service.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 
 import java.util.HashSet;
@@ -14,6 +12,7 @@ import java.util.UUID;
 public class Locale {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String region;
 
@@ -30,7 +29,6 @@ public class Locale {
     public Locale(String region, String code) {
         this.region = region;
         this.code = code;
-        this.id = UUID.randomUUID();
     }
 
     public UUID getId() {

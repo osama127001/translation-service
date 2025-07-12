@@ -12,6 +12,7 @@ import java.util.UUID;
 public class Translation {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String language;
     private Date createdAt;
@@ -36,12 +37,10 @@ public class Translation {
     private Set<Tag> tags = new HashSet<>();
 
     public Translation() {
-        this.id = UUID.randomUUID();
         this.createdAt = new Date();
     }
 
     public Translation(String language, String code) {
-        this.id = UUID.randomUUID();
         this.createdAt = new Date();
         this.language = language;
         this.code = code;

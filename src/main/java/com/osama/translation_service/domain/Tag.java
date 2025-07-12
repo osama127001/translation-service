@@ -1,9 +1,7 @@
 package com.osama.translation_service.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,6 +11,7 @@ import java.util.UUID;
 public class Tag {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String tag;
 
@@ -21,11 +20,9 @@ public class Tag {
     private Set<Translation> translations = new HashSet<>();
 
     public Tag() {
-        this.id = UUID.randomUUID();
     }
 
     public Tag(String tag) {
-        this.id = UUID.randomUUID();
         this.tag = tag;
     }
 

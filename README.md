@@ -1,13 +1,28 @@
-# Translation Service
-<hr>
+## Translation Service
+---
 
-* This is a test application build on Java 21 and spring-boot 3.5.X for applying to a java developer position. 
-* The project is a spring-boot service with CRUD implementations, Spring Data JPA, spring-security, swagger implemented.
-* This project has CommandLineRunners setup to add test data in the database at startup.
-* Run the following command with **_Java 21_** and **_Gradle 8.14.X_** to start all containers.
+This is a test application built with **Java 21** and **Spring Boot 3.5.x**, submitted for the Remote Java Developer position at **DigitalTolk**.
 
+---
+
+## 🚀 Features
+
+- ✅ Full CRUD APIs using Spring Boot
+- ✅ Spring Data JPA for entity relationships
+- ✅ Spring Security with JWT-based authentication
+- ✅ Swagger UI for API documentation
+- ✅ Dockerized stack: App, PostgreSQL, and pgAdmin
+- ✅ Bean validation for input data
+- ✅ Pre-loaded test data via `CommandLineRunner`
+
+---
+
+## 🐳 Dockerized Setup
+
+To run the application stack using Docker:
 
     docker compose down -v && ./gradlew clean build && docker compose up --build
+
 
 * The API's are already secured, in order to register, use the following body to hit **_/api/v1/auth/register_** endpoint to register a user:
 

@@ -23,15 +23,6 @@ public class Application {
 	}
 
 	@Bean
-	public CommandLineRunner init(TagDao tagDao) {
-		return args -> {
-			tagDao.save(new Tag("mobile"));
-			tagDao.save(new Tag("web"));
-			tagDao.save(new Tag("desktop"));
-		};
-	}
-
-	@Bean
 	public CommandLineRunner translationDataLoader(TranslationDao translationDao) {
 		return args -> {
 			InputStream is = getClass().getResourceAsStream("/translations.csv");
